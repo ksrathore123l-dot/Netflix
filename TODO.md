@@ -1,0 +1,3 @@
+- Add media query for tablet (max-width: 768px): Adjust nav, hero, trending, boxes, FAQ, footer ✓
+- Add media query for mobile (max-width: 480px): Further adjustments for small screens ✓
+- Test responsiveness by opening index.html in browser ✓

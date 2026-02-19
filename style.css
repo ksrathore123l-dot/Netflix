@@ -1,0 +1,828 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HERO BACKGROUND */
+.main {
+  height: 100vh;
+  position: relative;
+  background:
+    radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 60%,
+      rgba(0, 0, 0, 0.9) 100%),
+    url(assets/images/netflix\ bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+  margin: 0 70px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.lang select {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+.btn-2 {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* HEADING */
+.heading {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  gap: 15px;
+}
+
+.heading h1 {
+  font-size: 48px;
+}
+
+.heading p {
+  font-size: 20px;
+}
+
+.input {
+  display: flex;
+  gap: 10px;
+}
+
+.input input {
+  width: 320px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.button {
+  background: #e50914;
+  border: none;
+  color: #fff;
+  padding: 14px 24px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* CURVE */
+.line {
+  background: #000;
+  height: 140px;
+}
+
+.nf-curve {
+  width: 100%;
+  height: 140px;
+}
+
+/* ================= TRENDING NOW ================= */
+
+.trending {
+  background: #000;
+  padding: 40px 70px;
+  color: #fff;
+}
+
+.trending h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.trend-row {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+}
+
+.trend-row::-webkit-scrollbar {
+  display: none;
+}
+
+.trend-card {
+  position: relative;
+  min-width: 190px;
+  transition: 0.3s;
+}
+
+.trend-card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.trend-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.rank {
+  position: absolute;
+  left: -30px;
+  bottom: -25px;
+  font-size: 130px;
+  font-weight: 800;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.trending {
+  background: #000;
+  padding: 40px 70px;
+  color: #fff;
+}
+
+.trending h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.trend-wrapper {
+  position: relative;
+}
+
+/* SCROLL ROW */
+.trend-row {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.trend-row::-webkit-scrollbar {
+  display: none;
+}
+
+.trend-card {
+  min-width: 190px;
+  position: relative;
+  scroll-snap-align: start;
+  transition: 0.3s;
+}
+
+.trend-card:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+.trend-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* RANK */
+.rank {
+  position: absolute;
+  left: -30px;
+  bottom: -25px;
+  font-size: 130px;
+  font-weight: 800;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.nav-btn.left {
+  background-color: black;
+  left: -10px;
+  height: 300px;
+}
+
+.nav-btn.right {
+  background-color: black;
+  right: -10px;
+  height: 300px;
+}
+
+/* === FINAL TRENDING FIX === */
+
+/* ===== NETFLIX STYLE TRENDING NOW FIX ===== */
+
+.trend-wrapper{
+  position: relative;
+  overflow: hidden;
+}
+
+.trend-row{
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  align-items: center;     /* upar-niche jump band */
+  padding: 20px 0;         /* hover space */
+}
+
+.trend-row::-webkit-scrollbar{
+  display: none;
+}
+
+.trend-card{
+  min-width: 190px;
+  position: relative;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.trend-card:hover{
+  transform: scale(1.12);
+  z-index: 10;
+}
+
+.nav-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 60px;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn.left{left: -1px;}
+.nav-btn.right{ right: -1px; }
+
+.nav-btn:hover{
+  background: rgba(0,0,0,0.9);
+}
+
+
+/* move reaction join section */
+.section-join>h2 {
+  color: white;
+  margin-left: 70px;
+  margin-bottom: 25px;
+}
+
+.section-join {
+  background-color: black;
+  height: auto;
+  padding: 50px 0;
+}
+
+.box3 {
+  margin-top: 25px;
+  margin-left: 130px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boxes {
+  color: white;
+  height: 274px;
+  width: 300px;
+  background-color: red;
+  border-radius: 20px;
+  background: radial-gradient(120% 120% at 0% 0%, #2f335f 0%, #222654 28%, #15183a 52%, #202a3f8a 72%, #31000db3 100%);
+}
+
+.boxes>h3 {
+  max-width: 270px;
+  font-size: 22px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.boxes>p {
+  max-width: 275px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+/* 🔥 SVG bottom-right fix */
+.boxes {
+  position: relative;
+  /* MUST */
+}
+
+
+.heading-5 {
+  color: white;
+  font-size: 20px;
+  margin-left: 71px;
+  margin-top: 31px;
+  margin-bottom: -23px;
+}
+
+.faq {
+  background: #000;
+  padding: 40px;
+}
+
+.faq-item {
+  max-width: 1260px;
+  margin: auto;
+  padding: 3px;
+}
+
+.faq-question {
+  width: 100%;
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 24px;
+  padding: 24px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  background: #414141;
+}
+
+.icon {
+  font-size: 36px;
+  transition: 0.3s;
+}
+
+.faq-answer {
+  background: #2d2d2d;
+  color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+  padding: 24px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.search {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-p {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 70px;
+  margin-bottom: -9px;
+}
+
+.search-input {
+  width: 535px;
+  height: 55px;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 4px;
+
+}
+
+.search-button {
+  background: #e50914;
+  border: none;
+  color: #fff;
+  padding: 14px 40px 15px 49px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.footer {
+
+  color: white;
+}
+
+.footer-1 {
+  margin-left: 90px;
+  margin-top: 70px;
+}
+
+.footer a {
+  text-decoration: none;
+  text-decoration: underline;
+  color: white;
+
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  list-style: none;
+  padding: 10px;
+
+}
+
+.info {
+  gap: 233px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* padding: 60px; */
+  margin: 60px
+}
+
+.info a {
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
+
+.btn-3 {
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+  gap: 16px;
+}
+
+.lang-3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+
+.net {
+  color: white;
+    text-align: left;
+    padding-left: 80px;
+    padding-top: 45px;
+}
+.last{
+  color: #696969;
+    text-align: left;
+    padding-left: 80px;
+    padding-top: 45px;
+    margin-bottom: 90px;
+
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 30px;
+    margin: 0 30px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .btn {
+    gap: 12px;
+  }
+
+  .lang {
+    padding: 4px 8px;
+  }
+
+  .btn-2 {
+    padding: 5px 12px;
+    font-size: 14px;
+  }
+
+  .heading h1 {
+    font-size: 36px;
+  }
+
+  .heading p {
+    font-size: 18px;
+  }
+
+  .input {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .input input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .trending {
+    padding: 30px 30px;
+  }
+
+  .trend-card {
+    min-width: 160px;
+  }
+
+  .trend-card img {
+    height: 240px;
+  }
+
+  .rank {
+    font-size: 100px;
+    left: -25px;
+    bottom: -20px;
+  }
+
+  .section-join {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .box3 {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 30px;
+  }
+
+  .boxes {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .heading-5 {
+    margin-left: 30px;
+  }
+
+  .faq {
+    padding: 30px;
+  }
+
+  .faq-question {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .faq-answer p {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .search-button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .footer-1 {
+    margin-left: 30px;
+  }
+
+  .info {
+    gap: 100px;
+    margin: 40px;
+  }
+
+  .btn-3 {
+    margin-left: 30px;
+  }
+
+  .net {
+    padding-left: 30px;
+  }
+
+  .last {
+    padding-left: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 20px;
+    margin: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lang {
+    padding: 3px 6px;
+  }
+
+  .btn-2 {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .heading {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .heading p {
+    font-size: 16px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .input input {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .trending {
+    padding: 20px 20px;
+  }
+
+  .trend-card {
+    min-width: 140px;
+  }
+
+  .trend-card img {
+    height: 200px;
+  }
+
+  .rank {
+    font-size: 80px;
+    left: -20px;
+    bottom: -15px;
+  }
+
+  .section-join h2 {
+    margin-left: 20px;
+  }
+
+  .box3 {
+    margin: 20px 20px;
+    gap: 20px;
+  }
+
+  .boxes {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .heading-5 {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+
+  .faq {
+    padding: 20px;
+  }
+
+  .faq-question {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .search-p {
+    margin: 40px 20px -5px;
+  }
+
+  .search {
+    padding: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .footer-1 {
+    margin-left: 20px;
+  }
+
+  .info {
+    gap: 50px;
+    margin: 30px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info ul {
+    margin-bottom: 20px;
+  }
+
+  .btn-3 {
+    margin-left: 20px;
+  }
+
+  .net {
+    padding-left: 20px;
+  }
+
+  .last {
+    padding-left: 20px;
+  }
+}
